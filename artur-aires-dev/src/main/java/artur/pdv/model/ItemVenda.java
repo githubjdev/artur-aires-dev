@@ -2,14 +2,33 @@ package artur.pdv.model;
 
 public class ItemVenda {
 
-	private Produto produto;
+	private Long id;
 	private double quantidade;
 	private String descricao;
+	private Produto produto;
+	private Venda venda;
 
-	public ItemVenda(Produto produto, double quantidade) {
+	public ItemVenda(Produto produto, double quantidade, Venda venda) {
 		super();
 		this.produto = produto;
 		this.quantidade = quantidade;
+		this.venda = venda;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Venda getVenda() {
+		return venda;
+	}
+
+	public void setVenda(Venda venda) {
+		this.venda = venda;
 	}
 
 	public Produto getProduto() {
@@ -35,7 +54,5 @@ public class ItemVenda {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	
-	
 
 }
