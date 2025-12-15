@@ -1,6 +1,6 @@
 package artur.pdv.model;
 
-public class Categoria {
+public class Categoria{
 
 	private Long id;
 	private String nome;

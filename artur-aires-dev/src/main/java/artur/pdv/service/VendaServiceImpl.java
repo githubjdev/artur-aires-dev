@@ -4,6 +4,7 @@ import java.util.Calendar;
 
 import artur.pdv.enums.FormaPagamento;
 import artur.pdv.enums.TipoComprovante;
+import artur.pdv.interfaces.VendaServiceI;
 import artur.pdv.model.ComprovanteNota;
 import artur.pdv.model.ItemVenda;
 import artur.pdv.model.Pessoa;
@@ -11,16 +12,17 @@ import artur.pdv.model.Produto;
 import artur.pdv.model.Venda;
 import artur.pdv.util.LeitorCodigoBarras;
 
-public class VendaService {
+public class VendaServiceImpl implements VendaServiceI {
 
 	private Venda vendaAtual;
 	private LeitorCodigoBarras leitor;
 
-	public VendaService(Pessoa pessoa) {
+	public VendaServiceImpl(Pessoa pessoa) {
 		vendaAtual = new Venda(pessoa);
 		leitor = new LeitorCodigoBarras();
 	}
 
+	@Override
 	public void addProduto(String codigoBarra, double quatidade) {
 		Produto p = leitor.ler(codigoBarra);
 

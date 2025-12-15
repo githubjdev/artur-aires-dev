@@ -1,6 +1,6 @@
 import artur.pdv.enums.FormaPagamento;
 import artur.pdv.model.Pessoa;
-import artur.pdv.service.VendaService;
+import artur.pdv.service.VendaServiceImpl;
 
 public class VendaTeste {
 	
@@ -12,7 +12,7 @@ public class VendaTeste {
 		pessoa.setEmail("alex@gmail.com");
 		pessoa.setTelefone("4554545455");
 		
-		VendaService vendaService = new VendaService(pessoa);
+		VendaServiceImpl vendaService = new VendaServiceImpl(pessoa);
 
 		vendaService.addProduto("7891000100101", 1);
 		vendaService.addProduto("7891000100103", 2);
